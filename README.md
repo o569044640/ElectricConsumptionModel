@@ -1,1 +1,1 @@
-# ElectricConsumptionModel
+Repo Created on GitHub
