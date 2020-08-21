@@ -28,7 +28,7 @@ def main():
 
 
 def trainPredictionModel(dataSetFileName):
-    dataSet = pd.read_csv (r'recs2009_public.csv', low_memory=False)                    # Reading the dataset          
+    dataSet = pd.read_csv ('data/recs2009_public.csv', low_memory=False)                # Reading the dataset          
     dataSet = dataSet.drop(columns=invalidCol)                                          # Remove columns that are not numbers
 
     parameters, consumtion = dataSet.iloc[:,:-1],dataSet.iloc[:,-1]                     # Separate the data into parameters and electrical consumption

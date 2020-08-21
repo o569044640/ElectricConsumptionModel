@@ -24,7 +24,7 @@ pip install xgboost-1.1.0-cp37-cp37m-win_amd64.whl
 To run the model from the terminal with an example test data file, navigate to the project path:
 
 ```
-python model.py test.csv
+python model.py data/test.csv
 ```
 
 The model will automatically run and return a predicted electrical consumption number based on the input.
