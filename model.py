@@ -16,7 +16,7 @@ def main():
 
     #trainPredictionModel(dataSetFileName)                                              # Method to train the XGBoost model, unnecessary to invoke for each start
 
-    loaded_model = pickle.load(open("pima.pickle.dat", "rb"))                           # Loading trained prediction model
+    loaded_model = pickle.load(open("Trained-Model.pickle.dat", "rb"))                  # Loading trained prediction model
     testData = pd.read_csv (dataSetFileName, low_memory=False)                          # Tuning input data for prediction
     testData = testData.drop(columns=invalidCol)
     if "KWH" in testData.columns:
@@ -38,7 +38,7 @@ def trainPredictionModel(dataSetFileName):
         learning_rate = 0.35, max_depth = 10, alpha = 10, n_estimators = 15)
     model.fit(trainingParameters,trainingConsumption)
 
-    pickle.dump(model, open("pima.pickle.dat", "wb"))                                   # Saving the trained model locally
+    pickle.dump(model, open("Trained-Model.pickle.dat", "wb"))                          # Saving the trained model locally
     prediction = model.predict(testParameters)
     rmse = np.sqrt(mean_squared_error(testingConsumption, prediction))                  # Compute the mean sqaured error for model accuracy adjustment
     print("RMSE: %f" % (rmse))
